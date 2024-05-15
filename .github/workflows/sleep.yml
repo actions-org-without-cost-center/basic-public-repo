@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: sleepy
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Generate logs for 2 minutes on hosted ubuntu runner
+      run: |
+        for i in {1..120}
+        do
+          echo "Ubuntu - Log message number $i"
+          sleep 1
+        done
